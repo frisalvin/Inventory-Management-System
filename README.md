@@ -30,7 +30,3 @@ Web-based Inventory Management System built to manage product stock, track incom
 **Tools**
 - Apache (XAMPP)
 - Excel / CSV Integration
-
----
-
-## 📂 Project Structure
