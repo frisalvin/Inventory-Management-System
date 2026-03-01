@@ -1,0 +1,51 @@
+1. masuk ke localhost/phpMyAdmin
+2. create db dengan nama inventory
+3. masuk ke menu SQL lalu copas :
+
+
+CREATE TABLE admin (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50),
+password VARCHAR(255)
+);
+
+INSERT INTO admin(username,password) VALUES
+('buanaabadi','ceobuana');
+
+CREATE TABLE barang (
+id INT AUTO_INCREMENT PRIMARY KEY,
+kode_barang VARCHAR(50) UNIQUE,
+nama_barang VARCHAR(100),
+kategori VARCHAR(50),
+satuan VARCHAR(20),
+harga_modal INT DEFAULT 0,
+keterangan TEXT,
+stok_awal INT DEFAULT 0
+);
+
+CREATE TABLE stok_masuk (
+id INT AUTO_INCREMENT PRIMARY KEY,
+tanggal DATE,
+kode_barang VARCHAR(50),
+jumlah INT,
+supplier VARCHAR(100),
+keterangan TEXT
+);
+
+CREATE TABLE stok_keluar (
+id INT AUTO_INCREMENT PRIMARY KEY,
+tanggal DATE,
+kode_barang VARCHAR(50),
+jumlah INT,
+penerima VARCHAR(100),
+keterangan TEXT
+);
+
+CREATE TABLE stok_opname (
+id INT AUTO_INCREMENT PRIMARY KEY,
+tanggal DATE,
+kode_barang VARCHAR(50),
+stok_sistem INT,
+stok_fisik INT,
+selisih INT
+);
